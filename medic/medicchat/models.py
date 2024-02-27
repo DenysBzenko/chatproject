@@ -5,6 +5,7 @@ class Doctor(models.Model):
     age = models.PositiveIntegerField()
     specialty = models.CharField(max_length=100)
 
+
     def __str__(self):
         return self.name
 

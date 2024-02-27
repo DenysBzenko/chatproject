@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <style>
+
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .profile-image {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+        .profile-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Doctor Profile</h2>
+        <div class="profile-info">
+            <img src="{{ doctor.profile_picture.url }}" alt="Profile Picture" class="profile-image">
+            <p><strong>Name:</strong> {{ doctor.name }}</p>
+            <p><strong>Age:</strong> {{ doctor.age }}</p>
+            <p><strong>Specialty:</strong> {{ doctor.specialty }}</p>
+
+        </div>
+    </div>
+</body>
+</html>
