@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація доктора</title>
+</head>
+<body>
+    <h2>Реєстрація доктора</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Ім'я:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Вік:</label><br>
+        <input type="number" id="age" name="age"><br>
+        <label for="specialty">Спеціальність:</label><br>
+        <input type="text" id="specialty" name="specialty"><br><br>
+        <input type="submit" value="Зареєструватися">
+    </form>
+</body>
+</html>
