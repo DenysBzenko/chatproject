@@ -19,12 +19,13 @@ def view_doctors(request):
     return render(request, 'view_doctors.html', {'doctors': doctors})
 
 def doctor_profile(request):
-    # Отримання останнього зареєстрованого лікаря
     latest_doctor = Doctor.objects.latest('id')
     return render(request, 'profile.html', {'doctor': latest_doctor})
+
 def chat_list(request):
     chats = ChatRoom.objects.all()
     return render(request, 'chat_list.html', {'chats': chats})
+
 def chat_room(request, chat_id):
     chat = ChatRoom.objects.get(id=chat_id)
     return render(request, 'chat_room.html', {'chat': chat})
