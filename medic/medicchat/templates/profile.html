@@ -27,12 +27,20 @@
     <div class="profile-container">
         <h2>Doctor Profile</h2>
         <div class="profile-info">
-            <img src="{{ doctor.profile_picture.url }}" alt="Profile Picture" class="profile-image">
+
             <p><strong>Name:</strong> {{ doctor.name }}</p>
             <p><strong>Age:</strong> {{ doctor.age }}</p>
             <p><strong>Specialty:</strong> {{ doctor.specialty }}</p>
 
+            <!-- Посилання на редагування профілю -->
+            <a href="{% url 'edit_doctor' doctor.id %}">Редагувати профіль</a>
+
+            <!-- Посилання на видалення профілю -->
+            <a href="{% url 'delete_doctor' doctor.id %}">Видалити профіль</a>
+
         </div>
     </div>
+    <a href="{% url 'chat_list' %}">Chats</a>
+
 </body>
 </html>

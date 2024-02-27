@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Doctor</title>
+</head>
+<body>
+    <h2>Delete Doctor</h2>
+    <p>Are you sure you want to delete {{ doctor.name }}?</p>
+    <form method="post" id="delete-form">
+        {% csrf_token %}
+        <!-- Додайте приховане поле для передачі параметру delete -->
+        <input type="hidden" name="delete" value="true">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
