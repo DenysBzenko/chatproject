@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Doctor ,ChatRoom
+from .models import Doctor ,ChatRoom, Patient
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
-
+from django.http import HttpResponseRedirect
 
 def register_doctor(request):
     if request.method == 'POST':
@@ -18,8 +18,20 @@ def view_doctors(request):
     doctors = Doctor.objects.all()
     return render(request, 'view_doctors.html', {'doctors': doctors})
 
+
+
 def doctor_profile(request, doctor_id):
     doctor = get_object_or_404(Doctor, id=doctor_id)
+
+    if request.method == 'POST':
+        patient_name = request.POST.get('patient_name')
+        patient_age = request.POST.get('patient_age')
+        disease = request.POST.get('disease')
+        if patient_name and patient_age and disease:
+            patient = Patient.objects.create(name=patient_name, age=patient_age, disease=disease, doctor=doctor)
+
+            return HttpResponseRedirect(request.path)
+
     return render(request, 'profile.html', {'doctor': doctor})
 
 def chat_list(request):
