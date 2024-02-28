@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Doctor ,ChatRoom
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
-from django.urls import reverse
+
 
 def register_doctor(request):
     if request.method == 'POST':
@@ -10,7 +10,7 @@ def register_doctor(request):
         age = request.POST.get('age')
         specialty = request.POST.get('specialty')
         new_doctor = Doctor.objects.create(name=name, age=age, specialty=specialty)
-        return redirect('profile', doctor_id=new_doctor.id)
+        return redirect('doctor_profile', doctor_id=new_doctor.id)
     else:
         return render(request, 'registration.html')
 

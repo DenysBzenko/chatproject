@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Doctor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Delete Doctor</h2>
+<body class="bg-purple-900 text-white">
+    <h2 class="text-2xl font-semibold mb-4">Delete Doctor</h2>
     <p>Are you sure you want to delete {{ doctor.name }}?</p>
-    <form method="post" id="delete-form">
+    <form method="post" id="delete-form" class="mt-4">
         {% csrf_token %}
-        <!-- Додайте приховане поле для передачі параметру delete -->
+
         <input type="hidden" name="delete" value="true">
-        <button type="submit">Delete</button>
+        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Delete</button>
     </form>
 </body>
 </html>

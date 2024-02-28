@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Doctor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h2>Edit Doctor</h2>
-    <form method="post">
+<body class="bg-purple-900 text-white">
+    <h2 class="text-2xl font-semibold mb-4">Edit Doctor</h2>
+    <form method="post" class="max-w-md">
         {% csrf_token %}
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ doctor.name }}"><br>
-        <label for="age">Age:</label>
-        <input type="text" id="age" name="age" value="{{ doctor.age }}"><br>
-        <label for="specialty">Specialty:</label>
-        <input type="text" id="specialty" name="specialty" value="{{ doctor.specialty }}"><br>
-        <button type="submit">Save Changes</button>
+        <label for="name" class="block mb-2">Name:</label>
+        <input type="text" id="name" name="name" value="{{ doctor.name }}" class="block w-full bg-gray-800 border border-gray-700 rounded py-2 px-4 mb-2 text-white">
+        <label for="age" class="block mb-2">Age:</label>
+        <input type="text" id="age" name="age" value="{{ doctor.age }}" class="block w-full bg-gray-800 border border-gray-700 rounded py-2 px-4 mb-2 text-white">
+        <label for="specialty" class="block mb-2">Specialty:</label>
+        <input type="text" id="specialty" name="specialty" value="{{ doctor.specialty }}" class="block w-full bg-gray-800 border border-gray-700 rounded py-2 px-4 mb-4 text-white">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Save Changes</button>
     </form>
 </body>
 </html>

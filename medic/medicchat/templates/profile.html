@@ -1,46 +1,28 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-
-        .profile-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .profile-image {
-            max-width: 150px;
-            border-radius: 50%;
-        }
-        .profile-info {
-            margin-top: 20px;
-        }
+        /* Optional: Customize Tailwind CSS */
+        /* Add any custom styles here */
     </style>
 </head>
-<body>
-    <div class="profile-container">
-        <h2>Doctor Profile</h2>
+<body class="bg-purple-900 text-white">
+    <div class="profile-container max-w-2xl mx-auto bg-purple-800 border border-purple-700 rounded-lg p-6 mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Doctor Profile</h2>
         <div class="profile-info">
-
             <p><strong>Name:</strong> {{ doctor.name }}</p>
             <p><strong>Age:</strong> {{ doctor.age }}</p>
             <p><strong>Specialty:</strong> {{ doctor.specialty }}</p>
 
-            <!-- Посилання на редагування профілю -->
-            <a href="{% url 'edit_doctor' doctor.id %}">Редагувати профіль</a>
-
-            <!-- Посилання на видалення профілю -->
-            <a href="{% url 'delete_doctor' doctor.id %}">Видалити профіль</a>
-
+            <a href="{% url 'edit_doctor' doctor.id %}" class="text-blue-300 mr-4">Редагувати профіль</a>
+            <a href="{% url 'delete_doctor' doctor.id %}" class="text-red-300">Видалити профіль</a>
+            <a href="{% url 'chat_list' %}" class="block mt-4 text-blue-300">Chats</a>
         </div>
     </div>
-    <a href="{% url 'chat_list' %}">Chats</a>
 
 </body>
 </html>
