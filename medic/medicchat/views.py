@@ -3,7 +3,9 @@ from .models import Doctor ,ChatRoom, Patient
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
+import logging
 
+logger = logging.getLogger(__name__)
 def register_doctor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
