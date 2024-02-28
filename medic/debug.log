@@ -917,3 +917,120 @@ Not Found: /favicon.ico
 2024-02-28 14:10:18,550 WARNING basehttp 5784 8612 "GET /ggg/ HTTP/1.1" 404 2827
 2024-02-28 14:11:08,504 WARNING log 5784 26564 Not Found: /doct
 2024-02-28 14:11:08,504 WARNING basehttp 5784 26564 "GET /doct HTTP/1.1" 404 2827
+2024-02-28 15:11:45,972 INFO autoreload 49324 33772 Watching for file changes with StatReloader
+2024-02-28 15:11:57,805 INFO basehttp 49324 48796 "GET / HTTP/1.1" 200 1798
+2024-02-28 15:12:07,736 INFO basehttp 49324 25932 "POST / HTTP/1.1" 302 0
+2024-02-28 15:12:07,810 INFO basehttp 49324 25932 "GET /profile/11/ HTTP/1.1" 200 2487
+2024-02-28 15:12:14,731 INFO basehttp 49324 40652 "POST /profile/11/ HTTP/1.1" 302 0
+2024-02-28 15:12:14,771 INFO basehttp 49324 40652 "GET /profile/11/ HTTP/1.1" 200 2576
+2024-02-28 15:12:22,113 INFO basehttp 49324 9380 "GET /profile/11/ HTTP/1.1" 200 2576
+2024-02-28 15:12:31,260 INFO basehttp 49324 42120 "POST /profile/11/ HTTP/1.1" 302 0
+2024-02-28 15:12:31,301 INFO basehttp 49324 42120 "GET /profile/11/ HTTP/1.1" 200 2661
+2024-02-28 15:12:33,441 INFO basehttp 49324 42120 "GET /profile/11/ HTTP/1.1" 200 2661
+2024-02-28 15:12:37,094 INFO basehttp 49324 38148 "GET /edit_doctor/11/ HTTP/1.1" 200 1316
+2024-02-28 15:12:40,207 INFO basehttp 49324 38148 "POST /edit_doctor/11/ HTTP/1.1" 302 0
+2024-02-28 15:12:40,249 INFO basehttp 49324 38148 "GET /profile/11/ HTTP/1.1" 200 2659
+2024-02-28 15:12:43,857 INFO basehttp 49324 38148 "GET /profile/11/ HTTP/1.1" 200 2659
+2024-02-28 15:12:49,769 INFO basehttp 49324 45424 "GET /delete_doctor/11/ HTTP/1.1" 200 782
+2024-02-28 15:12:51,294 INFO basehttp 49324 45424 "POST /delete_doctor/11/ HTTP/1.1" 302 0
+2024-02-28 15:12:51,320 INFO basehttp 49324 45424 "GET / HTTP/1.1" 200 1798
+2024-02-28 15:14:45,139 ERROR log 49324 13720 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\__init__.py", line 2018, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\KSE\WEbprogram\WEBDEVPROJECT\chatproject\medic\medicchat\views.py", line 14, in register_doctor
+    new_doctor = Doctor.objects.create(name=name, age=age, specialty=specialty)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 671, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 863, in save_base
+    updated = self._save_table(
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 1006, in _save_table
+    results = self._do_insert(
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\base.py", line 1047, in _do_insert
+    return manager._insert(
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\query.py", line 1791, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1659, in execute_sql
+    for sql, params in self.as_sql():
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1583, in as_sql
+    value_rows = [
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1584, in <listcomp>
+    [
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1585, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\sql\compiler.py", line 1523, in prepare_value
+    value = field.get_db_prep_save(value, connection=self.connection)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\__init__.py", line 925, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\__init__.py", line 920, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\db\models\fields\__init__.py", line 2020, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'age' expected a number but got ''.
+2024-02-28 15:14:45,155 ERROR basehttp 49324 13720 "POST / HTTP/1.1" 500 144767
+2024-02-28 15:27:19,627 INFO autoreload 32068 47092 Watching for file changes with StatReloader
+2024-02-28 15:28:27,788 INFO autoreload 32068 47092 D:\KSE\WEbprogram\WEBDEVPROJECT\chatproject\medic\medicchat\urls.py changed, reloading.
+2024-02-28 15:28:37,149 INFO autoreload 12924 11268 Watching for file changes with StatReloader
+2024-02-28 15:28:39,829 INFO basehttp 12924 8556 "GET / HTTP/1.1" 200 1798
+2024-02-28 15:29:05,589 INFO basehttp 12924 16564 "POST / HTTP/1.1" 302 0
+2024-02-28 15:29:06,039 ERROR log 12924 16564 Internal Server Error: /profile/12/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\KSE\WEbprogram\WEBDEVPROJECT\chatproject\medic\medicchat\views.py", line 37, in doctor_profile
+    return render(request, 'profile.html', {'doctor': doctor})
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\User\AppData\Roaming\Python\Python38\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'static'. Did you forget to register or load this tag?
+2024-02-28 15:29:06,056 ERROR basehttp 12924 16564 "GET /profile/12/ HTTP/1.1" 500 144917
+2024-02-28 15:30:20,721 INFO autoreload 40784 22288 Watching for file changes with StatReloader
+2024-02-28 15:30:23,124 INFO basehttp 40784 6508 "GET /profile/12/ HTTP/1.1" 200 1855
+2024-02-28 15:30:23,203 INFO basehttp 40784 6508 "GET /static/style/profile.css HTTP/1.1" 200 1365
+2024-02-28 15:30:34,859 INFO basehttp 40784 55752 "POST /profile/12/ HTTP/1.1" 302 0
+2024-02-28 15:30:34,907 INFO basehttp 40784 55752 "GET /profile/12/ HTTP/1.1" 200 1974

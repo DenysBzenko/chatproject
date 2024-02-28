@@ -1,17 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Doctor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'style/delete_profile.css' %}">
 </head>
-<body class="bg-purple-900 text-white">
+<body>
     <h2 class="text-2xl font-semibold mb-4">Delete Doctor</h2>
     <p>Are you sure you want to delete {{ doctor.name }}?</p>
     <form method="post" id="delete-form" class="mt-4">
         {% csrf_token %}
-
         <input type="hidden" name="delete" value="true">
         <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Delete</button>
     </form>

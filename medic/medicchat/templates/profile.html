@@ -1,17 +1,17 @@
+{% load static %}
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Profile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-
-    </style>
+     <link rel="stylesheet" href="{% static 'style/profile.css' %}">
 </head>
-<body class="bg-purple-900 text-white">
-   <div class="profile-container max-w-2xl mx-auto bg-purple-800 border border-purple-700 rounded-lg p-6 mt-8">
-    <h2 class="text-2xl font-semibold mb-4">Doctor Profile</h2>
+<body>
+   <div class="profile-container">
+    <h2 class="profile-title">Doctor Profile</h2>
     <div class="profile-info">
         <p><strong>Name:</strong> {{ doctor.name }}</p>
         <p><strong>Age:</strong> {{ doctor.age }}</p>
@@ -22,32 +22,31 @@
                 <li>{{ patient.name }} (Age: {{ patient.age }}, Disease: {{ patient.disease }}, Treated by: {{ patient.doctor.name }})</li>
             {% endfor %}
         </ul>
-        <div class="mt-8">
-            <h3 class="text-xl font-semibold mb-2">Add New Patient</h3>
+        <div class="add-patient">
+            <h3 class="add-patient-title">Add New Patient</h3>
             <form method="post">
                 {% csrf_token %}
-                <div class="mb-4">
-                    <label for="patient_name" class="block text-sm font-medium text-gray-700">Patient Name:</label>
-                    <input type="text" id="patient_name" name="patient_name" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter name">
+                <div class="form-group">
+                    <label for="patient_name">Patient Name:</label>
+                    <input type="text" id="patient_name" name="patient_name" placeholder="Enter name">
                 </div>
-                <div class="mb-4">
-                    <label for="patient_age" class="block text-sm font-medium text-gray-700">Patient Age:</label>
-                    <input type="number" id="patient_age" name="patient_age" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter age">
+                <div class="form-group">
+                    <label for="patient_age">Patient Age:</label>
+                    <input type="number" id="patient_age" name="patient_age" placeholder="Enter age">
                 </div>
-                <div class="mb-4">
-                    <label for="disease" class="block text-sm font-medium text-gray-700">Disease:</label>
-                    <input type="text" id="disease" name="disease" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="Enter Disease">
+                <div class="form-group">
+                    <label for="disease">Disease:</label>
+                    <input type="text" id="disease" name="disease" placeholder="Enter Disease">
                 </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Patient</button>
+                <button type="submit">Add Patient</button>
             </form>
         </div>
-        <div class="mt-8">
-            <a href="{% url 'edit_doctor' doctor.id %}" class="text-blue-300 mr-4">Edit Profile</a>
-            <a href="{% url 'delete_doctor' doctor.id %}" class="text-red-300">Delete Profile</a>
+        <div class="profile-actions">
+            <a href="{% url 'edit_doctor' doctor.id %}">Edit Profile</a>
+            <a href="{% url 'delete_doctor' doctor.id %}">Delete Profile</a>
         </div>
     </div>
 </div>
-
 
 </body>
 </html>
