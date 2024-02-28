@@ -9,8 +9,8 @@ def register_doctor(request):
         name = request.POST.get('name')
         age = request.POST.get('age')
         specialty = request.POST.get('specialty')
-        Doctor.objects.create(name=name, age=age, specialty=specialty)
-        return redirect('profile')
+        new_doctor = Doctor.objects.create(name=name, age=age, specialty=specialty)
+        return redirect('profile', doctor_id=new_doctor.id)
     else:
         return render(request, 'registration.html')
 
@@ -18,17 +18,17 @@ def view_doctors(request):
     doctors = Doctor.objects.all()
     return render(request, 'view_doctors.html', {'doctors': doctors})
 
-def doctor_profile(request):
-    latest_doctor = Doctor.objects.latest('id')
-    return render(request, 'profile.html', {'doctor': latest_doctor})
+def doctor_profile(request, doctor_id):
+    doctor = get_object_or_404(Doctor, id=doctor_id)
+    return render(request, 'profile.html', {'doctor': doctor})
 
 def chat_list(request):
     chats = ChatRoom.objects.all()
     return render(request, 'chat_list.html', {'chats': chats})
 
 def chat_room(request, chat_id):
-    chat = ChatRoom.objects.get(id=chat_id)
-    return render(request, 'chat_room.html', {'chat': chat})
+  chat = ChatRoom.objects.get(id=chat_id)
+  return render(request, 'chat_room.html', {'chat': chat})
 
 def edit_doctor(request, doctor_id):
     doctor = get_object_or_404(Doctor, id=doctor_id)
@@ -37,7 +37,7 @@ def edit_doctor(request, doctor_id):
         doctor.age = request.POST.get('age')
         doctor.specialty = request.POST.get('specialty')
         doctor.save()
-        return redirect('profile')
+        return redirect('doctor_profile', doctor_id=doctor.id)
     else:
         return render(request, 'edit_profile.html', {'doctor': doctor})
 
@@ -46,6 +46,5 @@ def delete_doctor(request, doctor_id):
     if request.method == 'POST':
         if 'delete' in request.POST:
             doctor.delete()
-            return redirect(reverse('register_doctor'))
+            return redirect('register_doctor')
     return render(request, 'delete_profile.html', {'doctor': doctor})
-
