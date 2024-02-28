@@ -137,15 +137,32 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "verbose"
+        },
         "file": {
             "class": "logging.FileHandler",
             "level": "INFO",
             "filename": os.path.join(BASE_DIR, "debug.log"),
+            "formatter": "verbose"
+        },
+        "errors_file": {
+            "class": "logging.FileHandler",
+            "level": "ERROR",
+            "filename": os.path.join(BASE_DIR, "errors.log"),
+            "formatter": "verbose"
+        },
+    },
+    "formatters": {
+        "verbose": {
+            "format": "%(asctime)s %(levelname)s %(module)s %(process)d %(thread)d %(message)s"
         },
     },
     "loggers": {
         "django": {
-            "handlers": ["file"],
+            "handlers": ["console", "file", "errors_file"],
             "level": "INFO",
             "propagate": True,
         },

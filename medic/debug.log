@@ -911,3 +911,9 @@ Not Found: /favicon.ico
 "GET /edit_doctor/13/ HTTP/1.1" 200 1326
 "POST /edit_doctor/13/ HTTP/1.1" 302 0
 "GET /profile/13/ HTTP/1.1" 200 2496
+2024-02-28 14:10:07,023 INFO autoreload 5784 13704 Watching for file changes with StatReloader
+2024-02-28 14:10:08,421 INFO basehttp 5784 41468 "GET / HTTP/1.1" 200 1798
+2024-02-28 14:10:18,549 WARNING log 5784 8612 Not Found: /ggg/
+2024-02-28 14:10:18,550 WARNING basehttp 5784 8612 "GET /ggg/ HTTP/1.1" 404 2827
+2024-02-28 14:11:08,504 WARNING log 5784 26564 Not Found: /doct
+2024-02-28 14:11:08,504 WARNING basehttp 5784 26564 "GET /doct HTTP/1.1" 404 2827
