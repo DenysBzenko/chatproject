@@ -85,7 +85,7 @@ import pymongo
 MONGODB_USERNAME = 'dbzenko'
 MONGODB_PASSWORD = 'pppp'
 MONGODB_HOST = 'cluster0.ntu0tgk.mongodb.net'
-MONGODB_DATABASE = 'your_database_name'
+MONGODB_DATABASE = 'medicdataset'
 
 client = pymongo.MongoClient(f"mongodb+srv://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_HOST}/{MONGODB_DATABASE}?retryWrites=true&w=majority&appName=Cluster0")
 db = client[MONGODB_DATABASE]

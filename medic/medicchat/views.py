@@ -36,13 +36,7 @@ def doctor_profile(request, doctor_id):
 
     return render(request, 'profile.html', {'doctor': doctor})
 
-def chat_list(request):
-    chats = ChatRoom.objects.all()
-    return render(request, 'chat_list.html', {'chats': chats})
 
-def chat_room(request, chat_id):
-  chat = ChatRoom.objects.get(id=chat_id)
-  return render(request, 'chat_room.html', {'chat': chat})
 
 def edit_doctor(request, doctor_id):
     doctor = get_object_or_404(Doctor, id=doctor_id)
