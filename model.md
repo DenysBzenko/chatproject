@@ -1,5 +1,6 @@
-![image](https://github.com/DenysBzenko/chatproject/assets/119534908/21fd289e-046c-44d1-bcca-e5f12f2450d1)# Models
-Our project uses the mongodb atlas database, so all our data is recorded there. 
+# Database 
+![image](https://github.com/DenysBzenko/chatproject/assets/119534908/21fd289e-046c-44d1-bcca-e5f12f2450d1)
+- Our project uses the mongodb atlas database, so all our data is recorded there. 
 ## Where do we import it?
 ![image](https://github.com/DenysBzenko/chatproject/assets/119534908/e45e18d3-76bf-45a3-a79d-691eb6b5a80e)
 In our settings, we have to enter these values
