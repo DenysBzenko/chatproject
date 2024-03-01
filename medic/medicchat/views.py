@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Doctor ,ChatRoom, Patient
+from .models import Doctor , Patient
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect

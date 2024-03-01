@@ -1041,3 +1041,9 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'st
 2024-03-01 15:50:20,870 INFO basehttp 41896 50644 "GET / HTTP/1.1" 200 1798
 2024-03-01 15:50:33,694 ERROR log 41896 57280 Internal Server Error: /redirectGet
 2024-03-01 15:50:33,696 ERROR basehttp 41896 57280 "GET /redirectGet HTTP/1.1" 500 47
+2024-03-01 16:31:05,092 INFO autoreload 27796 26392 Watching for file changes with StatReloader
+2024-03-01 16:31:40,839 INFO autoreload 27796 26392 D:\KSE\WEbprogram\WEBDEVPROJECT\chatproject\medic\medic\settings.py changed, reloading.
+2024-03-01 16:31:43,359 INFO autoreload 47284 20780 Watching for file changes with StatReloader
+2024-03-01 16:31:46,304 INFO basehttp 47284 48212 "GET / HTTP/1.1" 200 1798
+2024-03-01 16:31:46,993 WARNING log 47284 19724 Not Found: /favicon.ico
+2024-03-01 16:31:46,993 WARNING basehttp 47284 19724 "GET /favicon.ico HTTP/1.1" 404 2963

@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'medicchat'
+    'medicchat',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,8 +49,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
-
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'https://www.example.com',
+]
 ROOT_URLCONF = 'medicchat.urls'
 
 TEMPLATES = [
