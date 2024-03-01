@@ -1034,3 +1034,10 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'st
 2024-02-28 15:30:23,203 INFO basehttp 40784 6508 "GET /static/style/profile.css HTTP/1.1" 200 1365
 2024-02-28 15:30:34,859 INFO basehttp 40784 55752 "POST /profile/12/ HTTP/1.1" 302 0
 2024-02-28 15:30:34,907 INFO basehttp 40784 55752 "GET /profile/12/ HTTP/1.1" 200 1974
+2024-03-01 15:49:29,990 INFO autoreload 12628 28828 Watching for file changes with StatReloader
+2024-03-01 15:50:01,870 INFO autoreload 57852 27840 Watching for file changes with StatReloader
+2024-03-01 15:50:16,000 INFO autoreload 57852 27840 D:\KSE\WEbprogram\WEBDEVPROJECT\chatproject\medic\medicchat\viewsNode.py changed, reloading.
+2024-03-01 15:50:18,300 INFO autoreload 41896 49040 Watching for file changes with StatReloader
+2024-03-01 15:50:20,870 INFO basehttp 41896 50644 "GET / HTTP/1.1" 200 1798
+2024-03-01 15:50:33,694 ERROR log 41896 57280 Internal Server Error: /redirectGet
+2024-03-01 15:50:33,696 ERROR basehttp 41896 57280 "GET /redirectGet HTTP/1.1" 500 47

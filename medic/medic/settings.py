@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'medic.wsgi.application'
 
-
+NODE_ENDPOINT = 'http://localhost:3500/users'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
